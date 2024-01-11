@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+    {% block contunt %}
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                {% for i in kumar %}
+                <div class="col-md-4"><br>
+                    <div class="card card-body">
+                        <p>product:{{ i.product }}</p>
+                       <p> Quantity :{{ i.Quantity  }}</p>
+                       <p>price:{{ i.price }}</p>
+                       <h1>total_amount:{{ i.total_amount }}</h1>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

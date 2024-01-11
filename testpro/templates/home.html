@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+    {% block contunt %}
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="SUBMIT">
+        </form>
+        {% if register %}            <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    {% for i in kalyan %}
+                    <div class="col-md-4">
+                        <div class="card card-body">
+                            <p>product_name :{{ i.product_name }}</p>
+                            <p>material  :{{ i.material }}</p>
+                            {% if i.img  %}
+                                <img src="{{ i.img.url }}" alt="">
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+        <button href="{% url 'bills' %}" >generate bill</button>
+
+            
+        {% endif %}
+         
+    {% endblock %}

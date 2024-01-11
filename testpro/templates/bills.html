@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+    {% block contunt %} 
+        {% if submit %}
+            <div class="container">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-body">
+                                <p>Quantity :{{ Quantity }}</p>
+                                <p>Price  :{{ price }}</p>
+                                <h1>total_amount :{{ total_amount }}</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+           
+            
+        {% else %}
+             <form action="" method="POST">
+                {% csrf_token %}
+                {{ pavan.as_p }}
+                <input type="submit" value="generate">
+             </form>
+        {% endif %}
+    {% endblock %}
